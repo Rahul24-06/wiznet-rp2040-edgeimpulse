@@ -6,7 +6,7 @@ RP2040 temperature monitor using WIZnet Ethernet HAT and edgeimpulse.
 
 ## Why Did We Build This? & The Solution
 
-    Prevention is better than cure" is one of the effective measures to prevent the spreading of COVID-19 and to protect mankind. Many researchers and doctors are The maintenance of the ambiance in places such as laboratories, especially chemical labs is essential. The temperature and humidity have to be monitored continuously and the level of air quality and heat levels are used as an interrupt to prevent laboratory accidents. The data from the sensors are fed to an ML algorithm to identify an anomaly and inform the security team via email. 
+Prevention is better than cure" is one of the effective measures to prevent the spreading of COVID-19 and to protect mankind. Many researchers and doctors are The maintenance of the ambiance in places such as laboratories, especially chemical labs is essential. The temperature and humidity have to be monitored continuously and the level of air quality and heat levels are used as an interrupt to prevent laboratory accidents. The data from the sensors are fed to an ML algorithm to identify an anomaly and inform the security team via email. 
 
 ## Requirements
 
