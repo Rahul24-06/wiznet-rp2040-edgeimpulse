@@ -2,11 +2,11 @@
 # by Rahul Khanna D
 
 RP2040 temperature monitor using WIZnet Ethernet HAT and edgeimpulse. 
+![WIZnet Ethernet HAT](./images/1.jpg)
 
 ## Why Did We Build This? & The Solution
 
-Prevention is better than cure" is one of the effective measures to prevent the spreading of COVID-19 and to protect mankind. Many researchers and doctors are The maintenance of the ambiance in places such as laboratories, especially chemical labs is essential. The temperature and humidity have to be monitored continuously and the level of air quality and heat levels are used as an interrupt to prevent laboratory accidents. The data from the sensors are fed to an ML algorithm to identify an anomaly and inform the security team via email. 
-
+    Prevention is better than cure" is one of the effective measures to prevent the spreading of COVID-19 and to protect mankind. Many researchers and doctors are The maintenance of the ambiance in places such as laboratories, especially chemical labs is essential. The temperature and humidity have to be monitored continuously and the level of air quality and heat levels are used as an interrupt to prevent laboratory accidents. The data from the sensors are fed to an ML algorithm to identify an anomaly and inform the security team via email. 
 
 ## Requirements
 
@@ -22,15 +22,15 @@ Prevention is better than cure" is one of the effective measures to prevent the 
 ### Software
 
 *   Arduino IDE 1.8.9
-*   <check>
 *   Edge Impulse Studio
+*   lib to be added
 
 
 ## Basic Hardware Components
   
 ### Raspberry Pi Pico
 
-Raspberry Pi Pico is a low-cost, high-performance microcontroller board with flexible digital interfaces. Key features include:
+  Raspberry Pi Pico is a low-cost, high-performance microcontroller board with flexible digital interfaces. Key features include:
 
 * RP2040 microcontroller chip designed by Raspberry Pi Foundation
 * Dual-core Arm Cortex M0+ processor, flexible clock running up to 133 MHz
@@ -43,16 +43,20 @@ Raspberry Pi Pico is a low-cost, high-performance microcontroller board with fle
 * Temperature sensor
 * Accelerated floating-point libraries on-chip
 * 8 × Programmable I/O (PIO) state machines for custom peripheral support
-  
+
+![Raspberry Pi Pico](./images/pico-pin.jpg)  
   
 ## WIZnet Ethernet HAT
-WIZnet Ethernet HAT (Hardware Attached on Top) is a Raspberry Pi Pico pin-compatible board that utilizes W5100S and supports both 3.3V & 5V.
+  
+  WIZnet Ethernet HAT (Hardware Attached on Top) is a Raspberry Pi Pico pin-compatible board that utilizes W5100S and supports both 3.3V & 5V.
 
-Please refer to this link to find more information about W5100S.
+  Please refer to this link to find more information about W5100S.
 
 * Raspberry Pi Pico Pin-Compatible
 * Ethernet (W5100S Hardwired TCP/IP CHIP)
-  
+
+![WIZnet Ethernet HAT pinout](./images/pinout_wiznet.png)  
+
 Features
 
 * Includes W5100S
@@ -65,28 +69,31 @@ Features
 * Supports Auto Negotiation - Full / Half Duplex, 10 / 100 Based
 * Built-in RJ45 (RB1-125BAG1A)
   
-Step 2: Connections
-You can find the pinout below:
-
-
-![Block diagram](./images/pinout.png)
-
-To make these connections, I've used separate connectors for power, and relay output.
-
-
-## Mask Detection Test
-
-By taking a boolean into consideration, the presence of the mask is detected. The boolean is set to '1' when the prediction is mask_on. Similarly, the boolean is set to '0' when the prediction is mask_off.
-
-A function is used to print the overlay to the captured image. The overlay text depends on the prediction value from the above step.
-
-Some of the example images are shown below.
-
-![Overlay - without mask](./images/o-womask.png)
-
-![Overlay - with mask](./images/o-wmask.png)
+## Connections
   
+  Solder the female berg sticks to the Raspbeery Pi Pico as shown below. 
+
+![img 2](./images/2.jpg)
+
+  Attach the WIZnet Ethernet Hat to the Raspberry Pi Pico as shown. 
   
+![img 3](./images/3.jpg)
+  
+Now the connection are done. We will be using the internal temperature sensor from the Raspberry Pi Pico for data collection. 
+
+## IDE setup 
+
+  The next step is to add the Raspberry Pi Pico to the Arduino IDE. This is done by the following steps. First, copy the following text
+  " https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json " and paste it to the File->Preferences and click OK. 
+  
+![ ](./images/ss1.png)
+  
+  Once done, go to Tools -> Boards -> Boards Manager and type "pico" in the search box. Install the Raspberry Pi Pico / RP 2040 board to the IDE. 
+
+![ ](./images/ss2.png)  
+
+Now the board is installed to the Arduino IDE.
+
 
 ## Working of the Project 🔭
 
