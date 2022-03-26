@@ -1,2 +1,103 @@
-# wiznet-rp2040-edgeimpulse
+# Real-time Lab monitoring using TinyML
+# by Rahul Khanna D
+
 RP2040 temperature monitor using WIZnet Ethernet HAT and edgeimpulse. 
+
+## Why Did We Build This? & The Solution
+
+Prevention is better than cure" is one of the effective measures to prevent the spreading of COVID-19 and to protect mankind. Many researchers and doctors are The maintenance of the ambiance in places such as laboratories, especially chemical labs is essential. The temperature and humidity have to be monitored continuously and the level of air quality and heat levels are used as an interrupt to prevent laboratory accidents. The data from the sensors are fed to an ML algorithm to identify an anomaly and inform the security team via email. 
+
+
+## Requirements
+
+### Hardware
+
+* Raspberry Pi Pico 
+* WIZnet Ethernet HAT
+* DHT22 Temperature Sensor (optional)
+* microUSB cable
+* LAN cable
+* 1S Li-ion Power bank
+
+### Software
+
+*   Arduino IDE 1.8.9
+*   <check>
+*   Edge Impulse Studio
+
+
+## Basic Hardware Components
+  
+### Raspberry Pi Pico
+
+Raspberry Pi Pico is a low-cost, high-performance microcontroller board with flexible digital interfaces. Key features include:
+
+* RP2040 microcontroller chip designed by Raspberry Pi Foundation
+* Dual-core Arm Cortex M0+ processor, flexible clock running up to 133 MHz
+* 264KB of SRAM, and 2MB of on-board Flash memory
+* USB 1.1 with device and host support
+* Low-power sleep and dormant modes
+* 26 × multi-function GPIO pins
+* 2 × SPI, 2 × I2C, 2 × UART, 3 × 12-bit ADC, 16 × controllable PWM channels
+* Accurate clock and timer on-chip
+* Temperature sensor
+* Accelerated floating-point libraries on-chip
+* 8 × Programmable I/O (PIO) state machines for custom peripheral support
+  
+  
+## WIZnet Ethernet HAT
+WIZnet Ethernet HAT (Hardware Attached on Top) is a Raspberry Pi Pico pin-compatible board that utilizes W5100S and supports both 3.3V & 5V.
+
+Please refer to this link to find more information about W5100S.
+
+* Raspberry Pi Pico Pin-Compatible
+* Ethernet (W5100S Hardwired TCP/IP CHIP)
+  
+Features
+
+* Includes W5100S
+* Supports Hardwired Internet Protocols: TCP, UDP, WOL over UDP, ICMP, IGMPv1/v2, IPv4, ARP, PPPoE
+* Supports 4 Independent Hardware SOCKETs simultaneously
+* Internal 16 Kbytes Memory for TX/ RX Buffers
+* Operation Voltage 3.3V / 5V - Built-in LDO (LM8805SF5-33V)
+* SPI Interface 5V I/O tolerance
+* 10 / 100 Ethernet PHY embedded
+* Supports Auto Negotiation - Full / Half Duplex, 10 / 100 Based
+* Built-in RJ45 (RB1-125BAG1A)
+  
+Step 2: Connections
+You can find the pinout below:
+
+
+![Block diagram](./images/pinout.png)
+
+To make these connections, I've used separate connectors for power, and relay output.
+
+
+## Mask Detection Test
+
+By taking a boolean into consideration, the presence of the mask is detected. The boolean is set to '1' when the prediction is mask_on. Similarly, the boolean is set to '0' when the prediction is mask_off.
+
+A function is used to print the overlay to the captured image. The overlay text depends on the prediction value from the above step.
+
+Some of the example images are shown below.
+
+![Overlay - without mask](./images/o-womask.png)
+
+![Overlay - with mask](./images/o-wmask.png)
+  
+  
+
+## Working of the Project 🔭
+
+To test the real-time scenario, we deployed it on one of the rooms to test how possibly it could be used and the results were pretty affirmative.   
+  
+
+
+*If you faced any issues in building this project, feel free to ask me. Please do suggest new projects that you want me to do next.*
+
+*Share this video if you like.*
+
+*Happy to have you subscribed: https://www.youtube.com/c/rahulkhanna24june?sub_confirmation=1*
+
+**Thanks for reading!**
