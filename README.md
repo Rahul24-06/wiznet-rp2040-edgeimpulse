@@ -94,6 +94,9 @@ Now the connection are done. We will be using the internal temperature sensor fr
 
 Now the board is installed to the Arduino IDE.
 
+## Data Acquisition for Edge Impulse
+To run a machine learning model on the Raspberry Pi pico, we need the ambient temperature data. Since the Raspberry Pi Pico has internal temperature sensor, we use them to collect the temperature data.
+
 
 ## Working of the Project 🔭
 
