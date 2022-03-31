@@ -94,9 +94,35 @@ Now the connection are done. We will be using the internal temperature sensor fr
 
 Now the board is installed to the Arduino IDE.
 
-## Data Acquisition for Edge Impulse
-To run a machine learning model on the Raspberry Pi pico, we need the ambient temperature data. Since the Raspberry Pi Pico has internal temperature sensor, we use them to collect the temperature data.
+## TinyML on Raspberry Pi Pico 
+The main idea of this project is to use Raspberry Pi pico to detect some anomaly on the temperature data and the entire classification is done on the RP2040 MCU. 
 
+Depending on the hardware capacity and memory size, different types of MCU/Application can be used in the TinyML, as shown in the bellow chart.
+
+![ ](./images/comp.png)
+
+To run a machine learning model on the Raspberry Pi pico, we need the ambient temperature data. Since the Raspberry Pi Pico has internal temperature sensor, we use them to collect the temperature data. The ARM Cortex M0+ is suitable for the Anomaly Detection and Sensor Classification which allows us to implement this project. 
+
+**Data Collection from Sensor**
+The First step is to collect the temperature data from the internal temperature sensor. Data is loaded using the built-in CLI which reads the sensor data from Pico's serail port. We can also import the data in the form of CSV or JSON file format. 
+
+Arduino Code to read internal temperature and send data via serial port
+```
+void setup() {
+  Serial.begin(115200);
+  delay(5000);
+}
+
+void loop() {
+  Serial.println(analogReadTemp());
+  delay(1000);
+}
+```
+![ ](./images/ss3.png)  
+
+
+Output Printed on Serial Monitor
+![ ](./images/ss4.png)  
 
 ## Working of the Project 🔭
 
