@@ -131,8 +131,46 @@ void loop() {
 Output Printed on Serial Monitor
 ![ ](./images/ss4.png)  
 
-What we need to do now is to collect data samples for temperature data that we want to classify:
-![ ](./images/temp.jpg)  
+At your terminal, run:
+
+''' edge-impulse-data-forwarder '''
+
+The data forwarder will ask you for the server you want to connect to, prompt you to log in, and then configure the device.
+This is an example of the output of the forwarder:
+
+'''
+Edge Impulse data forwarder v1.5.0
+? What is your user name or e-mail address (edgeimpulse.com)? jan@edgeimpulse.com
+? What is your password? [hidden]
+Endpoints:
+    Websocket: wss://remote-mgmt.edgeimpulse.com
+    API:       https://studio.edgeimpulse.com
+    Ingestion: https://ingestion.edgeimpulse.com
+
+[SER] Connecting to /dev/tty.usbmodem401203
+[SER] Serial is connected
+[WS ] Connecting to wss://remote-mgmt.edgeimpulse.com
+[WS ] Connected to wss://remote-mgmt.edgeimpulse.com
+? To which project do you want to add this device? accelerometer-demo-1
+? 3 sensor axes detected. What do you want to call them? Separate the names with ',': accX, accY, accZ
+? What name do you want to give this device? Jan's DISCO-L475VG
+[WS ] Authenticated
+
+'''
+Now go to Data acquisition and you should see it:
+![ ](./images/a1.png)  
+
+Now start sampling data using sample length long enough. At the end, you have the raw data samples that we will use to detect anomaly using Raspberry Pi Pico and machine learning:
+
+![ ](./images/a2.png)  
+
+Next, let us create the machine learning model that will use on the Pico to detect anomalies:
+
+![ ](./images/a3.png)  
+
+Then, let us extract features from the raw data and under anomaly detection select the following axes:
+
+![ ](./images/a4.png)  
 
 
 ## Setting up WIZnet Lib to Arduino IDE
@@ -143,7 +181,17 @@ First we download libraries from the link below.
 
 Click on Sketch -> Include Library -> Add .ZIP Library. Now add the downloaded libraries to the Arduino IDE. 
 
+Classifying data (Arduino)
+![ ](./images/a5.png)  
 
+Now it is time to detect anomaly with Rapberry Pi Pico. Try to run the code above and when the values read adhere to the normal pattern you will have:
+![ ](./images/temp.jpg)  
+
+Now try to blow on the sensor and you will notice that the machine learning model will detect the anomaly. Once the anomaly is detected, the data is sent to the server which in return sends an alert to the mail. 
+
+![ ](./images/a6.png)  
+
+![ ](./images/a7.png)  
 
 *If you faced any issues in building this project, feel free to ask me. Please do suggest new projects that you want me to do next.*
 
