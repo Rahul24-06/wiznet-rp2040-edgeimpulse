@@ -94,6 +94,12 @@ Now the connection are done. We will be using the internal temperature sensor fr
 
 Now the board is installed to the Arduino IDE.
 
+## An approach of this projects
+The block diagram of the project is shown below. The Raspberry Pi pico is mounted to the WIZnet HAT. With the temperture data being serial pushed, an ML model is generated using Edge Impulse. With the inference output, the MQTT/IFTTT is triggered to send the alert to the user. 
+
+![ ](./images/block.png)
+
+
 ## TinyML on Raspberry Pi Pico 
 The main idea of this project is to use Raspberry Pi pico to detect some anomaly on the temperature data and the entire classification is done on the RP2040 MCU. 
 
