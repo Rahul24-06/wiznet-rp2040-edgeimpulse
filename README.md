@@ -23,7 +23,8 @@ Prevention is better than cure" is one of the effective measures to prevent the 
 
 *   Arduino IDE 1.8.9
 *   Edge Impulse Studio
-*   WIZnet Arduino Ethernet
+*   Arduino-pico Library
+*   WIZnet Arduino Ethernet Library
 
 
 ## Basic Hardware Components
@@ -130,10 +131,15 @@ void loop() {
 Output Printed on Serial Monitor
 ![ ](./images/ss4.png)  
 
-## Working of the Project 🔭
 
-To test the real-time scenario, we deployed it on one of the rooms to test how possibly it could be used and the results were pretty affirmative.   
-  
+## Setting up WIZnet Lib to Arduino IDE
+
+First we download libraries from the link below. 
+1. https://github.com/WIZnet-ArduinoEthernet/Ethernet/tree/8419aa392750642c58a5d18bb850624b67f32007
+2. https://github.com/WIZnet-ArduinoEthernet/arduino-pico
+
+Click on Sketch -> Include Library -> Add .ZIP Library. Now add the downloaded libraries to the Arduino IDE. 
+
 
 
 *If you faced any issues in building this project, feel free to ask me. Please do suggest new projects that you want me to do next.*
