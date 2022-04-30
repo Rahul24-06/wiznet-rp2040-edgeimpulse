@@ -23,7 +23,7 @@ Prevention is better than cure" is one of the effective measures to prevent the 
 
 *   Arduino IDE 1.8.9
 *   Edge Impulse Studio
-*   lib to be added
+*   WIZnet Arduino Ethernet
 
 
 ## Basic Hardware Components
