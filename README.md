@@ -133,12 +133,12 @@ Output Printed on Serial Monitor
 
 At your terminal, run:
 
-''' edge-impulse-data-forwarder '''
+``` edge-impulse-data-forwarder ```
 
 The data forwarder will ask you for the server you want to connect to, prompt you to log in, and then configure the device.
 This is an example of the output of the forwarder:
 
-'''
+```
 Edge Impulse data forwarder v1.5.0
 ? What is your user name or e-mail address (edgeimpulse.com)? jan@edgeimpulse.com
 ? What is your password? [hidden]
@@ -156,7 +156,8 @@ Endpoints:
 ? What name do you want to give this device? Jan's DISCO-L475VG
 [WS ] Authenticated
 
-'''
+ ```
+ 
 Now go to Data acquisition and you should see it:
 ![ ](./images/a1.png)  
 
@@ -172,6 +173,7 @@ Then, let us extract features from the raw data and under anomaly detection sele
 
 ![ ](./images/a4.png)  
 
+Now the model is generated. Now let's setup the Raspberry Pi Pico and Arduino IDE.
 
 ## Setting up WIZnet Lib to Arduino IDE
 
