@@ -131,6 +131,9 @@ void loop() {
 Output Printed on Serial Monitor
 ![ ](./images/ss4.png)  
 
+What we need to do now is to collect data samples for temperature data that we want to classify:
+![ ](./images/temp.jpg)  
+
 
 ## Setting up WIZnet Lib to Arduino IDE
 
